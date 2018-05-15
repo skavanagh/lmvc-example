@@ -25,30 +25,35 @@
  *    exception statement from all source files in the program, then also delete
  *    it in the license file.
  */
-package com.lmvc.kontroller;
+package loophole.mvc.model;
 
-import com.lmvc.model.User;
-import com.lmvc.annotation.MethodType;
-import com.lmvc.base.BaseKontroller;
-import com.lmvc.annotation.Kontrol;
-import com.lmvc.annotation.Model;
+public class User {
+    Long id;
+    String name;
+    String email;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class HelloKtrl extends BaseKontroller {
-
-	@Model(name="msg")
-	String msg;
-	@Model(name="user")
-    User user1;
-
-	public HelloKtrl(HttpServletRequest request, HttpServletResponse response) {
-		super(request, response);
-	}
-	
-	@Kontrol(path="/hello", method= MethodType.GET)
-    public String execute() {
-    	return "hello.html";
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }
